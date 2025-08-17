@@ -55,21 +55,21 @@ println(person5.name) // getter
 // 이 책의 예제에서는 가급적이면 프로퍼티로 사용한다.
 
 // 자바에서의 클래스
-//class JavaPerson {
-//    private String name;
-//
-//    public JavaPerson(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//}
+class JavaPerson {
+    private String name;
+
+    public JavaPerson(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
 
 // 4. 접근 제한자
 // 접근 제한자란 변수나 함수를 공개하는 데 사용되는 키워드이다.
