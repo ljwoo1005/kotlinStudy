@@ -20,6 +20,15 @@ if(a < b) {
 // 다음과 같이 if문을 식처럼 사용할 수도 있다.
 val maxx = if(a > b) a else b
 
+val maxxx = if(a > b) {
+    println("내가 하늘에 서겠다")
+    a
+} else {
+    println("내가 땅에 서겠다")
+    b
+}
+println(maxxx)
+
 // 2. when
 // when문은 자바의 switch문에 대응한다. when문을 사용하는 다양한 방법은 다음과 같다.
 // 값이 하나인 경우는 물론 콤마(,)나 in 연산자로 값의 범위를 자유롭게 지정하는 것이 특징이다.
@@ -53,7 +62,10 @@ val number2 = 1
 
 fun isEven(num : Int) = when(num % 2) {
     0 -> "짝"
-    1 -> println("")
+    1 -> {
+        println("")
+        "홀"
+    }
     else -> "홀"
 } // 결과가 String으로 추론되어 반환형 선언 생략 가능
 
