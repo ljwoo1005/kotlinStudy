@@ -31,14 +31,25 @@ println(add3(3, 5)) // 8
 // 안드로이드에서는 버튼 클릭 이벤트를 구현할 때 onClick() 추상 메서드만을 가지는 View.OnClickListener 인터페이스를 구현한다.
 
 // 다음은 안드로이드에서 버튼에 클릭 이벤트 리스너를 구현하는 코드를 일반적인 익명 클래스를 작성하듯 작성한 코드이다.
+// 코틀린에서 익명 클래스 구현 시에는 object 키워드를 사용하고, 만들고자 하는 클래스를 상속하는 형태(인터페이스라면 구현하는 형태)의 코드가 된다. (콜론 옆에 구현 클래스 or 인터페이스 타입 선언)
 // 여기서 View.OnClickListener 인터페이스에는 onClick() 추상 메서드가 하나 있기 때문에 onClick() 메서드를 오버라이드하고 있다.
+
+// 코틀린 권장 표기법
 button.setOnClickListener(object : View.OnClickListener) {
     override fun onClick(v : View?) {
         // TODO : 클릭 시 처리
     }
 }
 
+// 자바스크립트같이 작성하는 방법
+button.setOnClickListener(object : View.OnClickListener {
+    override fun onClick(v : View?) {
+        // TODO : 클릭 시 처리
+    }
+})
+
 // 구현하는 인터페이스에 구현해야 할 메서드가 하나뿐일 때는 이를 람다식으로 변경할 수 있다.
+// object 키워드와 구현할 인터페이스명이 생략되었고, 오버라이드할 메서드명도 생략되었다.
 // 다음 코드는 람다식으로 변경되어 코드가 줄었지만 괄호도 중첩되어 있고 기호도 많아 뭔가 코드가 복잡해보인다.
 button.setOnClickListener({ v : View? ->
     // TODO : 클릭 시 처리
