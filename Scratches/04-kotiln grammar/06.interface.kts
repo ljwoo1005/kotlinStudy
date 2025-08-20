@@ -84,6 +84,4 @@ interface Inter2 {
 }
 
 // 컴파일 에러 : Cannot infer visibility for 'method'. Specify it explicitly
-class InterImpl : Inter1, Inter2 {
-
-}
+class InterImpl : Inter1, Inter2 { }
