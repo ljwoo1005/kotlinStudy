@@ -33,7 +33,7 @@ println(d) // hello
  * var 키워드(변수)에서만 사용한다.
  * null값으로 초기화할 수 없다.
  * 초기화 전에는 변수를 사용할 수 없다.
- * 기본 자료형(Double, Float, Long, Int, Short, Byte, Char, Boolean)에서는 사용할 수 없다.
+ * Int, Long, Double, Float에서는 사용할 수 없다.
  */
 
 // 3. lazy로 늦은 초기화
@@ -72,7 +72,7 @@ val name4 : String = name!! // OK
 val str2 : String? = null
 
 var ifUpperCase = if (str2 != null) str2 else null // null
-var safeCallUpperCase = str2?.uppercase() // null
+var safeCallUpperCase = str2?.toUpperCase() // null
 
 // 안전한 호출을 사용하면 복잡한 if문을 한 줄로 줄일 수 있다.
 
@@ -81,6 +81,6 @@ var safeCallUpperCase = str2?.uppercase() // null
 // 마지막 코드는 이제 null이 아닌 "초기화하시오"라는 문자열을 반환한다.
 val str3 : String? = null
 
-var ifUpperCase2 = if (str3 != null) str3 else null // null
-var safeCallUpperCase2 = str3?.uppercase() ?: "초기화하시오" // 초기화하시오
+var ifUpperCase2 = if (str3 != null) str else null // null
+var safeCallUpperCase = str3?.toUpperCase() ?: "초기화하시오" // 초기화하시오
 

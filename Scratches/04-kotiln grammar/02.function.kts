@@ -21,6 +21,15 @@ fun greet2(str : String) {
     println(str)
 }
 
+// 함수 표현식
+// 코틀린은 자바스크립트와 같이 익명 함수를 통해 변수에 함수를 할당할 수 있다.
+val function = fun(int : Int) : Int {
+    println(int)
+    return int
+}
+
+println(function) // 3; 3
+
 
 // 자바와의 차이점
 // 자바의 메서드 선언은 보통 접근제어자 반환타입 메서드명(파라미터 타입 파라미터명) {} 이런 방식으로 선언된다.

@@ -55,11 +55,6 @@ println(str3 + "하세요") // 자바
 println("$str3 하세요") // 코틀린
 println("${str3} 하세요") // 코틀린
 
-// Boolean
-// 자바와 같이 1Byte의 크기를 가지며, true와 false가 있다.
-var a = true
-var b = false
-
 // 배열
 // 배열은 Array라는 별도의 타입으로 표현된다.
 // arrayOf() 메서드를 사용하여 배열의 생성과 초기화를 함께 수행한다.

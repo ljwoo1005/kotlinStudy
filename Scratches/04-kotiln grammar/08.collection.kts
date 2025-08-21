@@ -43,9 +43,6 @@ citiesMap["한국"] = "서울특별시" // citiesMap.put("한국", "서울특별
 // 추가
 citiesMap["미국"] = "워싱턴" // citiesMap.put("미국", "워싱턴")
 
-// 삭제
-citiesMap.remove("일본")  // citiesMap.remove("일본")
-
 // 맵 전체의 키와 값을 탐색할 때는 다음과 같이 간단히 탐색할 수 있다.
 // 맵의 키와 값을 탐색
 for ( (key, value) in map ) { // 마치 자바스크립트와 같은 모습

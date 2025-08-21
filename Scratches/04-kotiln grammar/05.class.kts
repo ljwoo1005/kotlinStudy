@@ -11,74 +11,9 @@ class Person {
 val person = Person()
 
 // 2. 생성자
-// 생성자를 가지는 클래스는 다음과 같이 표현할 수 있다.
-// 이 코드는 빈 생성자를 가지는 클래스이다.
-class Person2(var name : String) {
-
-}
-
-// 생성자에서 초기화 코드를 작성하려면 다음과 같이 constructor로 생성자를 표현하고 블록에 코드를 작성한다.
-// 이 생성자는 name을 출력한다.
-class Person3 {
-    constructor(name : String) {
-        println(name)
-    }
-}
-
-val p3 = Person3("name") // name
-
-// 코틀린에서는 생성자 이외에도 init 블록에 작성한 코드가 클래스를 인스턴스화할 때 가장 먼저 초기화된다.
-// 즉, 위의 코드를 다음과 같이 작성할 수 있다.
-class Person4(var name : String) {
-    init {
-        println(name)
-    }
-}
-
-val p4 = Person4("name") // name
-
-// 둘은 같은 코드를 작성하여 같은 결과를 보이지만 큰 차이점이 있다.
-// Person3 클래스의 constructor에서 파라미터로 전달된 "name"은 constructor 내부에서만 사용할 수 있으며, Person3 클래스 내부의 메서드에서 호출할 수 없다.
-// 반면, Person4 클래스의 이름 옆의 (var name : String)은 아래에 후술할 "프로퍼티"로 Person4클래스 내부의 메서드에서 호출할 수 있다.
-
-
+// 05.1.class constructor.kts에서 자세히 다룸
 // 3. 프로퍼티
-
-// 클래스의 속성을 사용할 때는 멤버에 직접 접근하며 이를 프로퍼티라 한다.
-// 다음 코드에서 Person 클래스는 name 프로퍼티를 가지고 있다.
-// 프로퍼티에 값을 쓰려면 = 기호로 값을 대입한다(setter). 값을 읽을 때는 프로퍼티를 참조한다(getter).
-// 코틀린에서는 속성에 값을 설정하거나 얻으려면 getter/setter 메서드 없이 바로 점(".")을 찍고 name 프로퍼티에 접근할 수 있다.
-// 마치 자바스크립트와 유사한 사용방법. 하지만 자바스크립트와는 다르게 클래스 내부에 없는 프로퍼티를 get, set하려하면 컴파일 에러가 발생한다.
-
-// 클래스 선언
-class Person5(var name : String) { // String 타입의 name 변수를 Person5 클래스의 프로퍼티로 선언
-
-}
-
-// 인스턴스 생성
-val person5 = Person5("멋쟁이") // 코틀린의 클래스 프로퍼티는 객체 생성 시 초기화가 필수이다.
-person5.name = "키다리" // setter
-println(person5.name) // getter - "키다리"
-
-// 자바로 작성된 클래스의 getter/setter 메서드는 코틀린에서 사용할 때 기존의 getter/setter르 사용할 수도 있고 프로퍼티로 사용할 수도 있다.
-// 이 책의 예제에서는 가급적이면 프로퍼티로 사용한다.
-
-// 자바에서의 클래스
-class JavaPerson {
-    private String name;
-
-    public JavaPerson(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}
+// 05.1.class constructor.kts에서 자세히 다룸
 
 // 4. 접근 제한자
 // 접근 제한자란 변수나 함수를 공개하는 데 사용되는 키워드이다.
@@ -141,6 +76,13 @@ class OuterClass {
     }
 }
 
+var outer = OuterClass()
+var inner = outer.InnerClass()
+
+println(outer.a) // 10
+inner.aChange()
+println(outer.a) // 20
+
 // 7. 추상 클래스
 // 추상 클래스는 미구현 메서드가 포함된 클래스를 말한다.
 // 클래스와 미구현 메서드 앞에 abstract 키워드를 붙인다.
@@ -166,3 +108,30 @@ class CompleteClass : AbstractClass() {
 val a = AbstractClass() // 에러
 val a = CompleteClass() // OK
 a.func() // hello
+
+// 8. 익명 클래스
+// https://apro-developer.tistory.com/43 참고하여 설명 보충 나중에
+// 익명 클래스는 class 키워드를 이용하여 명시적으로 선언한 클래스가 아닙니다.
+// 익명 클래스는 추상클래스나 인터페이스의 객체를 1회만 생성할 경우 유용하게 사용됩니다.
+// 익명 클래스의 선언에는 object 키워드를 사용합니다.
+// 사용 방법은 다음과 같습니다.
+abstract class AbstractClass2 {
+    abstract fun func()
+}
+
+object : AbstractClass2() {
+    override fun func() {
+        println()
+    }
+}
+
+// 익명 클래스는 선언과 동시에 자기 자신을 객체로 반환합니다. 따라서 해당 객체를 변수에 할당하거나 파라미터로 전달할 수 있습니다.
+
+var anonymousObject = object : AbstractClass2() {
+    override fun func() {
+        println("익명 클래스 구현")
+    }
+}
+
+anonymousObject.func() // 익명 클래스 구현
+

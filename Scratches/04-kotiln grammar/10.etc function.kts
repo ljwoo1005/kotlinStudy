@@ -19,6 +19,10 @@
 // 확장 함수를 추가할 클래스에 점을 찍고 함수 이름을 작성한다.
 // 확장 함수 내부에서는 이 객체를 this로 접근할 수 있고 이러한 객체를 리시버 객체라고 한다.
 // 다음은 Int 자료형에서 짝수인지 아닌지를 알 수 있도록 isEven() 확장 함수를 추가한 예이다.
+fun Int.isEven() : Boolean {
+    return this % 2 == 0
+}
+
 fun Int.isEven() = this % 2 == 0
 
 val a = 5
@@ -39,9 +43,17 @@ val e = c.toInt() // Long을 Int로
 val f = d.toDouble() // Int를 Double로
 val g = c.toString() // Long을 String으로
 
+println( e is Int ) // true
+println( f is Double ) // true
+println( g is String ) // true
+
 // 숫자 형태의 문자열을 숫자로 바꿀 때는 자바와 마찬가지로 Integer.parseInt() 메서드를 사용한다.
 val intStr = "10"
 val int = Integer.parseInt(intStr)
+val double = int.toDouble()
+
+println(int is Int)
+println(double is Double)
 
 // 일반 클래스 간에 형변환을 하려면 as 키워드를 사용한다.
 open class Animal { }
@@ -66,11 +78,18 @@ if (str is String) { // str이 String형이라면
 
 // 이 책에서 사용되는 예는 다음과 같다.
 // add 함수는 x, y, callback 3개의 인수를 받는다.
-// 내용은 callback에 x와 y의 합을 전달한다.
-// 여기서 callback은 하나의 숫자를 받고 반환이 없는 함수이다.
 // 자바에서는 주로 인터페이스를 사용하는데 코틀린은 함수를 활용하는 점이 다르다.
 
-// 인수 : 숫자, 숫자, 하나의 숫자를 인수로 하는 반환값이 없는 함수(인수가 될 함수의 선언은 파라미터와 반환 타입만 선언한다)
+fun add(x : Int, y : Int, callback : (sum : Int, str : String) -> Unit) {
+    callback(x + y, "hello")
+}
+
+add(5, 3, fun (a : Int, b : String) {
+    println(a)
+    println(b)
+})
+
+// 만약 callback의 인자가 1개일 경우, 다음과 같이 사용할 수 있다.
 fun add(x : Int, y : Int, callback : (sum : Int) -> Unit) {
     callback(x + y)
 }
@@ -90,10 +109,10 @@ add(5, 3, { println(it) }) // 8
 // 대신 동반 객체(companion object)로 이를 구현한다.
 
 // 다음 코드는 newInstance() 정적 메서드를 사용하여 Fragment 객체를 생성하는 팩토리 패턴을 구현 및 사용하는 예이다.
-class Fragment {
+class Fragment private constructor() {
     companion object {
         fun newInstance() : Fragment {
-            println("생성됨")
+            println("Fragment 객체 생성됨")
             return Fragment()
         }
     }
@@ -106,10 +125,10 @@ val fragment = Fragment.newInstance()
 
 // 6. let() 함수
 // 코틀린 기본 라이브러리는 몇 가지 유용한 함수를 제공한다.
-// let() 함수는 블록에 자기 자신을 인수로 전달하고 수행된 결과를 반환한다.
-// 인수로 전달한 객체는 it으로 참조한다.
+// let() 함수는 블록에 객체 자기 자신을 인수로 전달하고 수행된 결과를 반환한다.
+// 인수로 전달한 객체 자기 자신은 it으로 참조한다.
 // let() 함수는 인수가 1개이기 때문에 블록을 바깥으로 빼고, 괄호를 생략할 수 있다.
-// let() 함수는 안전한 호출 연산자("?.")와 함께 사용하면 null값이 아닐 때만 실행하는 코드를 다음과 같이 나타낼 수 있다.
+// let() 함수는 안전한 호출 연산자("?.")와 함께 사용하면 객체가 null값이 아닐 때만 실행하는 코드를 다음과 같이 나타낼 수 있다.
 // fun <T, R> T.let(block : (T) -> R) : R
 
 val intStr2 = "10"
@@ -118,6 +137,7 @@ val intStr2 = "10"
 val result = intStr2?.let({ // Int
     Integer.parseInt(it)
 })
+
 
 // 괄호 밖으로 블록을 뺌
 //val result = intStr2?.let() { // Int
@@ -152,10 +172,21 @@ println(result2) // 10
 // apply() 함수는 블록에 객체 자신이 리시버 객체로 전달되고 이 객체가 반환된다.
 // 객체의 상태를 변화시키고 그 객체를 다시 반환할 때 주로 사용한다.
 // fun <T> T.apply(block : T.() -> Unit) : T
-val result2 = car?.apply {
-    this.setColor("BLUE")
-    this.setPrice(2000)
+class Car() {
+    var color : String = "RED"
+    var price : Int = 1000
 }
+
+val car = Car()
+println(car.color)
+println(car.price)
+
+var blueCar = car.apply() {
+    this.color = "BLUE"
+    this.price = 2000
+}
+println(blueCar.color)
+println(blueCar.price)
 
 // 9. run() 함수
 // run() 함수는 익명 함수처럼 사용하는 방법과 객체에서 호출하는 방법을 모두 제공한다.
@@ -173,11 +204,13 @@ val avg = run {
 
 println(avg) // 80.0
 
-// 객체에서 호출하는 방법은 객체를 블록의 리시버 객체로 전달하고 블록의 결과를 반환한다.
+// 객체에서 호출하는 방법은 객체를 블록 내부에 리시버 객체로 전달하고 블록의 결과를 반환한다.
 // 안전한 호출을 사용할 수 있어 with() 함수보다 더 유용하다.
 // fun <T, R> T.run(block : T.() -> R) : R
 val str100 = "hello"
 
-str100?.run {
-    println(uppercase()) // this 생략
+var upperCaseStr = str100?.run {
+    uppercase()
 }
+
+println(upperCaseStr)
