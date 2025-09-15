@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".linearlayout04.LinearLayout04">
+
+    <!--
+    * 뷰를 정렬하는 gravity, layout_gravity 속성
+      - gravity 속성의 정렬 대상은 콘텐츠
+        >> 레이아웃 혹은 뷰 그룹에 gravity 속성을 설정할 경우,
+           해당 레이아웃, 뷰 그룹에 포함되는 모든 뷰들이 설정한 gravity 속성을 따른다.
+        >> 만약 단일 뷰 객체에 gravity 속성을 설정할 경우,
+           뷰 내부의 컨텐츠(Ex. text)가 설정한 gravity 속성을 따른다.
+      - layout_gravity는 레이아웃 내부에서 뷰 자체를 정렬하는 속성
+        >> 레이아웃의 orientation 속성과 같은 방향으로는 layout_gravity가 적용되지 않음
+           Ex. orientation="vertical" , layout_gravity="center_vertical"
+           -> 적용 안됨
+      - 위 두 속성을 사용하지 않으면 기본적으로 왼쪽 위로 정렬된다.
+    -->
+
+    <!--
+        TextView의 gravity 설정 : 텍스트를 우측 아래로 정렬
+        TextView의 layout_gravity 설정 : TextView를 수평 가운데로 정렬
+    -->
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#FF0000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:text="HelloWorld"
+        android:gravity="right|bottom"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- 레이아웃에 gravity 속성 적용 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="#00FF00"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:text="HelloWorld"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="#0000FF"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:text="HelloWorld"
+            android:gravity="left|bottom"/>
+
+    </LinearLayout>
+
+</LinearLayout>

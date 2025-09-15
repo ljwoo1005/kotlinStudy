@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".linearlayout03.LinearLayout03_01">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--
+        * 뷰 여러 개로 여백을 나누어 채우기
+            - layout_weight 속성에 지정한 숫자는 가중치
+            - layout_weight 값을 각각 1과 3으로 선언했다면
+              가로 여백을 각각 1/4만큼, 3/4만큼 나누어 차지
+            - 부모 LinearLayout의 orientation이 horizontal이기 때문에
+              가로 여백을 채움
+            - 만약 orientation이 vertical이라면
+              세로 여백을 채움
+         -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUTTON01"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUTTON02"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON3"
+        android:layout_weight="3"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON4"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="마지막 버튼"/>
+
+
+
+</LinearLayout>
