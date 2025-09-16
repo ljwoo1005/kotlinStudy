@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".constraintlayout01.ConstraintLayout01">
+
+    <!--
+        * Constraint 제약조건을 사용하기 위해
+          ConstraintLayout 내의 자식 View는 전부 id값을 가져야 한다.
+
+        * Constraint 제약조건 이름 규칙
+            - Top : 위쪽
+            - Bottom : 아래쪽
+            - Start : 왼쪽
+            - End : 오른쪽
+
+            - app:layout_constraintStart_toEndOf
+              >> constraintStart : 나의 왼쪽 위치를
+              >> toEndOf : 다른 View의 오른쪽에 맞춘다
+            - app:layout_constraintTop_toBottomOf
+              >> constraintTop : 나의 위쪽 위치를
+              >> toBottomOf : 다른 View의 아래쪽에 맞춘다
+    -->
+
+
+    <!-- 제약조건 상하좌우를 전부 부모 기준으로 잡아 정 가운데에 위치 -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <!-- 제약조건 설정 시 가로, 세로 설정을 1개 이상 설정해야 에러가 안남 -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="텍스트 뷰 01"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="텍스트 뷰 02"
+        app:layout_constraintEnd_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"/>
+
+    <!--
+        match constraint : width or height을 0dp로 하여
+        View의 크기를 제약조건을 설정한 상대의 크기에 맞게 조절
+    -->
+    <TextView
+        android:id="@+id/textView03"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="match constraint"
+        app:layout_constraintBottom_toTopOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView" />
+
+    <!--
+        내부 레이아웃 또한 ConstraintLayout의 자식 View 객체이므로
+        가로, 세로의 제약조건을 1개 이상 설정해야 함
+    -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUTTON01"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUTTON02"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
