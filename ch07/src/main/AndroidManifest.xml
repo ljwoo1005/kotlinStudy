@@ -9,6 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".relativelayout03.RelativeLayout03"
+            android:exported="false" />
+        <activity
+            android:name=".relativelayout02.RelativeLayout02"
+            android:exported="false" />
+        <activity
+            android:name=".relativelayout01.RelativeLayout01"
+            android:exported="false" />
+        <activity
             android:name=".linearlayout04.LinearLayout04"
             android:exported="true">
             <intent-filter>

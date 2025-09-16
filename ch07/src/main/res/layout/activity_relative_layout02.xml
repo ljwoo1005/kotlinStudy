@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".relativelayout02.RelativeLayout02">
+
+    <!-- align 속성 : 상대 뷰의 어느 쪽에 맞춰서 정렬할지 정하는 속성 -->
+    <!--
+        - android:layout_alignTop      : 기준 뷰와 위쪽을 맞춤
+        - android:layout_alignBottom   : 기준 뷰와 아래쪽을 맞춤
+        - android:layout_alignLeft     : 기준 뷰와 왼쪽을 맞춤
+        - android:layout_alignRight    : 기준 뷰와 오른쪽을 맞춤
+        - android:layout_alignBaseline : 기준 뷰와 텍스트 기준선을 맞춤
+    -->
+
+    <TextView
+        android:id="@+id/text01"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RIGHT BUTTON"
+        android:layout_toRightOf="@id/text01"
+        android:layout_alignBaseline="@id/text01"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BOTTOM BUTTON"
+        android:layout_toRightOf="@id/text01"
+        android:layout_alignBottom="@id/text01"/>
+
+</RelativeLayout>
