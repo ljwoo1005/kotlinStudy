@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".constraintlayout02.ConstraintLayout02">
+
+    <!--
+        - app:layout_constraintHorizontal_bias : 제약조건 안에서 가로 축의 위치 조절
+        - app:layout_constraintVertical_bias : 제약조건 안에서 세로 축의 위치 조절
+        - 값의 범위는 0.0 ~ 1.0이고 기본값은 0.5
+    -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#FF0000"
+        android:text="Red Box"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/greenBox"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00FF00"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.2"/>
+
+    <!--
+        - app:layout_constraintDimensionRatio : 제약조건 내에서 비율에 맞게 View의 크기 조절
+        - Ratio 설정을 사용하기 위해선 width, height 둘 중 하나는 0dp로 지정해야 함
+    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Ratio Button"
+        app:layout_constraintTop_toBottomOf="@+id/greenBox"
+        app:layout_constraintStart_toStartOf="@+id/greenBox"
+        app:layout_constraintEnd_toEndOf="@+id/greenBox"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <!--
+        * Circular positioning (원형 배치)
+          한 View의 중점을 기준으로 다른 View의 중점을 배치할 수 있다.
+          각도와 거리의 값이 필요하며 View가 배치될 수 있는 곳을 이으면 원이 된다.
+        - app:layout_constraintCircle="중점이 될 View의 id값"
+        - app:layout_constraintCircleRadius="중점 간의 반지름"
+        - app:layout_constraintCircleAngle="중점 간의 각도"
+    -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintCircle="@+id/progressBar"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintCircle="@+id/progressBar"
+        app:layout_constraintCircleAngle="90"
+        app:layout_constraintCircleRadius="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintCircle="@+id/progressBar"
+        app:layout_constraintCircleAngle="135"
+        app:layout_constraintCircleRadius="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintCircle="@+id/progressBar"
+        app:layout_constraintCircleAngle="225"
+        app:layout_constraintCircleRadius="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintCircle="@+id/progressBar"
+        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleRadius="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintCircle="@+id/progressBar"
+        app:layout_constraintCircleAngle="315"
+        app:layout_constraintCircleRadius="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,8 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".constraintlayout03.ConstraintLayout03"
+            android:exported="false" />
+        <activity
+            android:name=".constraintlayout02.ConstraintLayout02"
+            android:exported="false" />
+        <activity
             android:name=".constraintlayout01.ConstraintLayout01"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

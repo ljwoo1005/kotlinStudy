@@ -63,10 +63,29 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
-        android:text="match constraint"
+        android:text="match constraint width"
         app:layout_constraintBottom_toTopOf="@id/imageView"
         app:layout_constraintEnd_toEndOf="@id/imageView"
         app:layout_constraintStart_toStartOf="@id/imageView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="112dp"
+        android:background="#FFFF00"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="112dp"
+        android:background="#FFFF00"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageView"/>
 
     <!--
         내부 레이아웃 또한 ConstraintLayout의 자식 View 객체이므로
@@ -92,6 +111,8 @@
             android:text="BUTTON02"/>
 
     </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".constraintlayout03.ConstraintLayout03">
+
+    <!--
+        * Chain : 여러 View들을 수직, 수평으로 나열하는 방법
+          Chain은 나열하는 View들의 대표가 되는 Head 요소에 의해 스타일이 결정된다.
+        - layout_constraintHorizontal_chainStyle : 수평 방향 체인 스타일 결정
+        - layout_constraintVertical_chainStyle : 수직 방향 체인 스타일 결정
+
+        Chain은 spread / spread_inside / packed 유형으로 나눌 수 있다.
+        default : spread
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chainLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/chainLayout02"
+        app:layout_constraintVertical_weight="1">
+
+        <!-- layout_constraintHorizontal_chainStyle = spread -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/firstHead"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#FF0000"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/firstMiddle"/>
+
+            <TextView
+                android:id="@+id/firstMiddle"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#00FF00"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/firstHead"
+                app:layout_constraintEnd_toStartOf="@+id/firstEnd"/>
+
+            <TextView
+                android:id="@+id/firstEnd"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#0000FF"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/firstMiddle"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- layout_constraintHorizontal_chainStyle = spread_inside -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/secondHead"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#FF0000"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/secondMiddle"/>
+
+            <TextView
+                android:id="@+id/secondMiddle"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#00FF00"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/secondHead"
+                app:layout_constraintEnd_toStartOf="@+id/secondEnd"/>
+
+            <TextView
+                android:id="@+id/secondEnd"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#0000FF"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/secondMiddle"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- layout_constraintHorizontal_chainStyle = packed -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/thirdHead"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#FF0000"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/thirdMiddle"/>
+
+            <TextView
+                android:id="@+id/thirdMiddle"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#00FF00"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/thirdHead"
+                app:layout_constraintEnd_toStartOf="@+id/thirdEnd"/>
+
+            <TextView
+                android:id="@+id/thirdEnd"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#0000FF"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/thirdMiddle"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chainLayout02"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/chainLayout01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_weight="1">
+
+        <!-- layout_constraintVertical_chainStyle="spread" -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_04"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0">
+
+            <TextView
+                android:id="@+id/fourthHead"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#0000FF"
+                app:layout_constraintVertical_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/fourthMiddle"/>
+
+            <TextView
+                android:id="@+id/fourthMiddle"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#00FF00"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fourthHead"
+                app:layout_constraintBottom_toTopOf="@+id/fourthEnd"/>
+
+            <TextView
+                android:id="@+id/fourthEnd"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#FF0000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fourthMiddle"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- layout_constraintVertical_chainStyle="spread_inside" -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_05"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/fifthHead"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#0000FF"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/fifthMiddle"/>
+
+            <TextView
+                android:id="@+id/fifthMiddle"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#00FF00"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fifthHead"
+                app:layout_constraintBottom_toTopOf="@+id/fifthEnd"/>
+
+            <TextView
+                android:id="@+id/fifthEnd"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#FF0000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fifthMiddle"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- layout_constraintVertical_chainStyle="packed" -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_06"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0">
+
+            <TextView
+                android:id="@+id/sixthHead"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#0000FF"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/sixthMiddle"/>
+
+            <TextView
+                android:id="@+id/sixthMiddle"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#00FF00"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sixthHead"
+                app:layout_constraintBottom_toTopOf="@+id/sixthEnd"/>
+
+            <TextView
+                android:id="@+id/sixthEnd"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="#FF0000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sixthMiddle"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
