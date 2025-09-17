@@ -10,11 +10,11 @@
     <!--
         * Chain : 여러 View들을 수직, 수평으로 나열하는 방법
           Chain은 나열하는 View들의 대표가 되는 Head 요소에 의해 스타일이 결정된다.
+          Chain 스타일은 spread / spread_inside / packed 유형으로 나눌 수 있다.
+          default : spread
+
         - layout_constraintHorizontal_chainStyle : 수평 방향 체인 스타일 결정
         - layout_constraintVertical_chainStyle : 수직 방향 체인 스타일 결정
-
-        Chain은 spread / spread_inside / packed 유형으로 나눌 수 있다.
-        default : spread
     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/chainLayout01"
