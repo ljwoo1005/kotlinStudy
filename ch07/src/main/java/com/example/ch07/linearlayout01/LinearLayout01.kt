@@ -13,7 +13,7 @@ class LinearLayout01 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_linear_layout01)
+        setContentView(R.layout.activity_01_linear_layout01)
 
         val button1 : Button = findViewById(R.id.button1)
         val button2 : Button = findViewById(R.id.button2)
