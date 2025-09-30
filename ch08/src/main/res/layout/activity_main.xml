@@ -17,5 +17,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <CheckBox
+        android:id="@+id/checkbox01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="체크박스01"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkbox02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="체크박스02"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

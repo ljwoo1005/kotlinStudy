@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
+import android.widget.CheckBox
+import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +14,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    // 터치 이벤트 함수나 키 입력 이벤트 함수 등은 AppCompatActivity 클래스의 조상 클래스인 Activity에 있음
 
     /*
      * 터치 이벤트의 콜백 함수인 onTouchEvent()를 오버라이드
@@ -112,7 +116,44 @@ class MainActivity : AppCompatActivity() {
         // OnBackPressedCallback의 isEnabled = true일 때 뒤로가기 클릭 시 이벤트 발생
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
+        /*
+         * View 이벤트의 처리 구조
+         * 뷰 이벤트 처리는 이벤트 소스와 이벤트 핸들러로 역할이 나뉘며
+         * 이 둘을 리스너로 연결해야 이벤트를 처리할 수 있다.
+         * 이벤트 소스 : 이벤트가 발생한 객체
+         * 이벤트 핸들러 : 이벤트 발생 시 실행할 로직이 구현된 객체
+         * 리스너 : 이벤트 소스와 이벤트 핸들러를 연결해 주는 함수
+         *
+         * 하단 코드에서
+         * checkBox01 - 이벤트 소스
+         * { buttonView, isChecked -> ~~ } - 이벤트 핸들러
+         * setOnCheckedChangeListener 함수 - 리스너
+         * 하단 코드는 SAM(Single Abstract Method) 표기법으로 구현됨
+         */
+        val checkBox01: CheckBox = findViewById(R.id.checkbox01)
+        checkBox01.setOnCheckedChangeListener { buttonView, isChecked ->
+            Log.d("LJW", "체크박스 눌림01")
+        }
 
+        /*
+         * 별도의 클래스로 구현한 이벤트 핸들러를 리스너에 붙임
+         */
+        val checkBox02 = findViewById<CheckBox>(R.id.checkbox02)
+        checkBox02.setOnCheckedChangeListener(MyCheckBoxEventHandler())
+
+    }
+
+    /*
+     * 이벤트 핸들러를 별도의 클래스로 구현한 예
+     * 체크박스 이벤트 핸들러는 CompoundButton 추상 클래스의 OnCheckedChangeListener 함수형 인터페이스 내부의 함수인
+     * onCheckedChange(buttonView: CompoundButton, isChecked: Boolean)
+     * 함수를 사용하여 만들 수 있다.
+     * buttonView는 체크박스 View를 의미하고, isChecked는 현재 체크되어있는지 아닌지를 true, false로 나타낸다.
+     */
+    class MyCheckBoxEventHandler : CompoundButton.OnCheckedChangeListener {
+        override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+            Log.d("LJW", "체크박스 눌림02");
+        }
     }
 
 
