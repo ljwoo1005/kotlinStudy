@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    drawable 디렉터리 : 이미지 리소스를 저장하는 디렉터리
+    이미지는 PNG, JPG, GIF, 9.PNG 파일을 인식 가능하고,
+    XML로 작성한 이미지도 가능하다.
+    현재 파일은 XML로 작성한 이미지.
+
+    shape태그 : 도형을 의미하며 android:shape="rectangle"처러머
+    shape 속성을 이용해 도형의 타입을 지정할 수 있다.
+    shape 속성에 사용 가능한 값
+    1. rectangle : 직사각형
+    2. oval : 타원
+    3. line : 선
+    4. ring : 고리
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--
+        gradient : 그라데이션을 설정할 수 있음.
+            startColor : 그라데이션 시작 색상 지정
+            endColor : 그라데이션 종료 색상 지정
+            angle : 그라데이션을 진행할 각도를 지정
+    -->
+    <gradient
+        android:startColor="#FFFF0000"
+        android:endColor="#80FF00FF"
+        android:angle="45" />
+
+    <!--
+        corners : 둥근 모서리를 그리는 데 사용함.
+        shape값이 rectangle일 때에만 적용 가능
+        (웹 css의 border-radius 속성과 비슷함)
+    -->
+    <corners android:radius="8dp"/>
+
+    <!--
+        다른 속성들
+        size : 도형의 크기 지정
+        solid : 도형의 색상 지정
+        stroke : 도형의 윤곽선 지정
+    -->
+  
+</shape>

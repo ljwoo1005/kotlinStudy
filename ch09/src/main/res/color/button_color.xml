@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        color 디렉터리의 리소스는 특정 뷰의 상태를 표현하고
+        그 상태에 적용되는 색상을 등록한다.
+     -->
+
+    <!-- 클릭했을 때 -->
+    <item android:state_pressed="true"
+        android:color="@color/red"/>
+
+    <!-- 포커스 되었을 때 -->
+    <item android:state_focused="true"
+        android:color="@color/green"/>
+
+    <!-- 기본 -->
+    <item android:color="#FFFF00"/>
+
+</selector>
