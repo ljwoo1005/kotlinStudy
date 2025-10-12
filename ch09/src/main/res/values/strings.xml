@@ -1,6 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ch09</string>
     <string name="hello">hello</string>
     <string name="world">world</string>
     <string name="code_text">code text</string>
+    <string name="port01">portrait01</string>
+    <string name="port02">portrait02</string>
+    <string name="land01">landscape01</string>
+    <string name="land02">landscape02</string>
 </resources>

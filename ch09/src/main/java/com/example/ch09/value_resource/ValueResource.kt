@@ -1,4 +1,4 @@
-package com.example.ch09.value_string_resource
+package com.example.ch09.value_resource
 
 import android.os.Bundle
 import android.widget.ImageView

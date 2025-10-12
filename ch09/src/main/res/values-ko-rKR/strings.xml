@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 휴대폰의 국가 설정에 맞춰 문자열이 변경됨 -->
+<resources>
+    <string name="app_name">채널09</string>
+    <string name="hello">안녕</string>
+    <string name="world">세계</string>
+    <string name="code_text">코드 텍스트</string>
+    <string name="port01">세로화면01</string>
+    <string name="port02">세로화면01</string>
+    <string name="land01">가로화면01</string>
+    <string name="land02">가로화면01</string>
+</resources>

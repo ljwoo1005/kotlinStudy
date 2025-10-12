@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".value_string_resource.ValueResource">
+    tools:context=".value_resource.ValueResource">
 
     <!--
         값 리소스 : values 디렉터리
