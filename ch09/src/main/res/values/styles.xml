@@ -16,9 +16,9 @@
         parent 속성으로 name 속성값을 넣어 style 상속이 가능하다.
     -->
     <style name="MyTextStyleSub" parent="MyTextStyle">
-        <item name="android:textSize">@dimen/size30dp</item>
         <item name="android:textColor">#0000FF</item>
         <item name="android:background">@color/green</item>
     </style>
 
 </resources>
+

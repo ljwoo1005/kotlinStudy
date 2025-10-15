@@ -11,10 +11,10 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="ch09">
+      <SelectionState runConfigName="ch08">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="ch08">
+      <SelectionState runConfigName="ch09">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
