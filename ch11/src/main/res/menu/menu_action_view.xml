@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+        액션 뷰 : 액션바에서 특별한 기능을 제공하며 대표적으로 androidx.appcompat.widgetSearchView가 있다.
+    -->
+    <item
+        android:id="@+id/searchBar"
+        android:title="searchBar"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+
+
+</menu>

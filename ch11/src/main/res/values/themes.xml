@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <!-- 기본 테마 -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- 여기에 light 테마를 지정 -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <!-- 바로 위의 Base.Theme.MyApplication을 상속받음. -->
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication">
+        <item name="colorPrimary">#FF0000</item> <!-- 툴바와 버튼의 배경색 -->
+        <item name="colorAccent">#00FF00</item> <!-- 스위치가 켬(on) 상황일 때와 같이 활성 모드 상태를 표현 -->
+
+        <item name="android:fitsSystemWindows">true</item> <!-- 뷰 객체가 상태바와 겹치지 않게 간격 조절 -->
+        <item name="android:statusBarColor">@color/black</item> <!-- 폰 최상단 상태바의 배경색 -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item> <!-- 상태바의 배경색 바꾸기 위한 2개 속성 -->
+        <item name="android:windowTranslucentStatus">false</item> <!-- 상태바의 배경색 바꾸기 위한 2개 속성 -->
+        <!-- android:statusBarColor : API Level 21부터 적용된 설정 -->
+    </style>
+</resources>

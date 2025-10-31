@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <!-- values/themes.xml의 style 태그 name=Theme.MyApplication을 가져옴 -->
+
+        <activity
+            android:name=".MainFragmentBackStack"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MainFragment"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ToolbarActionView"
+            android:exported="false"
+            android:parentActivityName=".MainToolbar" />
+        <activity
+            android:name=".ToolbarXMLMenu"
+            android:exported="false"
+            android:parentActivityName=".MainToolbar" />
+        <activity
+            android:name=".ToolbarBasic"
+            android:exported="false"
+            android:parentActivityName=".MainToolbar" /> <!-- 액션바 왼쪽의 업 버튼(<-) 설정. 눌렀을 때 이동할 액티비티 이름 설정 -->
+        <activity
+            android:name=".MainToolbar"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
