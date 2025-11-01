@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -33,6 +33,42 @@
         android:layout_height="wrap_content"
         android:text="프래그먼트 백스택 이동"
         app:layout_constraintTop_toBottomOf="@+id/moveFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/moveRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리사이클러 뷰 이동"
+        app:layout_constraintTop_toBottomOf="@+id/moveFragmentBackStack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/moveViewPager2RecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ViewPager2 - RecyclerView 이동"
+        app:layout_constraintTop_toBottomOf="@+id/moveRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/moveViewPager2Fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ViewPager2 - Fragment 이동"
+        app:layout_constraintTop_toBottomOf="@+id/moveViewPager2RecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/moveDrawerLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drawer Layout 이동"
+        app:layout_constraintTop_toBottomOf="@+id/moveViewPager2Fragment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

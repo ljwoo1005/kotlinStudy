@@ -10,10 +10,27 @@
         android:theme="@style/Theme.MyApplication">
         <!-- values/themes.xml의 style 태그 name=Theme.MyApplication을 가져옴 -->
 
+
+        <activity
+            android:name=".DrawerLayout"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ViewPager2Fragment"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ViewPager2Recycler"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainRecyclerView"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainFragmentBackStack"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainFragment"
             android:exported="false"

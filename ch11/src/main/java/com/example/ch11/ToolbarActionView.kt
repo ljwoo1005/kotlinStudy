@@ -16,7 +16,7 @@ class ToolbarActionView : AppCompatActivity() {
         setContentView(R.layout.activity_toolbar_action_view)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar) // 액션바의 내용을 툴바에 적용
+        setSupportActionBar(toolbar) // 툴바를 액션바로 설정
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // 툴바에 업 버튼 표시
 

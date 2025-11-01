@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainRecyclerView">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00"
+        android:text="Recycler View"
+        android:textSize="40dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/addDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리스트 추가"/>
+
+    <LinearLayout
+        android:id="@+id/changeLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/changeVerticalLinearLayoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수직 LinearLayout"/>
+        <Button
+            android:id="@+id/changeHorizontalLinearLayoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수평 LinearLayout"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/changeGridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/changeVerticalGridLayoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수직 GridLayout"/>
+        <Button
+            android:id="@+id/changeHorizontalGridLayoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수평 GridLayout"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/changeStaggeredGridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/changeVerticalStaggeredGridLayoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수직 StaggeredGridLayout"/>
+        <Button
+            android:id="@+id/changeHorizontalStaggeredGridLayoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수평 StaggeredGridLayout"/>
+    </LinearLayout>
+
+</LinearLayout>
